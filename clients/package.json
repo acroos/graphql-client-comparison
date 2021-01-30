@@ -1,0 +1,13 @@
+{
+  "name": "clients",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "graphql-request": "cd graphql-request-client && yarn start",
+    "start": "concurrently \"yarn graphql-request\""
+  },
+  "devDependencies": {
+    "concurrently": "^5.3.0"
+  }
+}
