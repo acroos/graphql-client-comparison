@@ -30,12 +30,16 @@ export default function ProductList() {
         setProducts(data.fetchProducts)
       })
       .catch((reason) => {
-        setError(reason.response.errors[0]?.message)
+        if (reason.response?.errors) {
+          setError(reason.response.errors[0].message)
+        } else {
+          setError('No response from server')
+        }
       })
   }, [])
 
   if (error) {
-    return <div>Error!</div>
+    return <div>Error! {error}</div>
   }
 
   if (products === undefined) {

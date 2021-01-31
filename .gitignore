@@ -53,6 +53,7 @@
 /**/.env.development.local
 /**/.env.test.local
 /**/.env.production.local
+/**/.eslintcache
 
 /clients/**/npm-debug.log*
 /clients/**/yarn-debug.log*

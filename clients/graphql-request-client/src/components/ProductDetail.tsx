@@ -26,7 +26,7 @@ type ProductDetailProps = RouteComponentProps<ProductDetailParams>
 
 function ProductDetail({ match }: ProductDetailProps) {
   const [product, setProduct] = useState<ProductWithReviews | undefined>()
-  const [error, setError] = useState()
+  const [error, setError] = useState<string>()
 
   useEffect(() => {
     request('http://localhost:3000/graphql', QUERY, {
@@ -36,12 +36,16 @@ function ProductDetail({ match }: ProductDetailProps) {
         setProduct(data.fetchProduct)
       })
       .catch((reason) => {
-        setError(reason.response.errors[0]?.message)
+        if (reason.response?.errors) {
+          setError(reason.response.errors[0].message)
+        } else {
+          setError('No response from server')
+        }
       })
   }, [match.params.id])
 
   if (error) {
-    return <div>Error!</div>
+    return <div>Error! {error}</div>
   }
 
   if (product === undefined) {

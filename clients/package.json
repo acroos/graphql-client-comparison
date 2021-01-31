@@ -9,7 +9,7 @@
     "apollo-client": "cd apollo-client-client && yarn && yarn start",
     "urql": "cd urql-client && yarn && yarn start",
     "graphql-hooks": "cd graphql-hooks-client && yarn && yarn start",
-    "start": "concurrently \"yarn graphql-request\" \"yarn react-query\" \"yarn apollo-client\" \"yarn urql\" \"graphql-hooks-client\""
+    "start": "concurrently \"yarn graphql-request\" \"yarn react-query\" \"yarn apollo-client\" \"yarn urql\" \"yarn graphql-hooks\""
   },
   "devDependencies": {
     "concurrently": "^5.3.0"
