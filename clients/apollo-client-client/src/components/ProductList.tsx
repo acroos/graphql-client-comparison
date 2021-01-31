@@ -3,7 +3,6 @@ import React from 'react'
 import useProducts from '../useProducts'
 import ProductListItem from './ProductListItem'
 
-import './ProductList.css'
 import { Link } from 'react-router-dom'
 
 export default function ProductList() {

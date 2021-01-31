@@ -2,7 +2,6 @@ import React from 'react'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 
-import './App.css'
 import ProductDetail from './components/ProductDetail'
 import ProductList from './components/ProductList'
 

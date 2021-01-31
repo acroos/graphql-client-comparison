@@ -1,8 +1,6 @@
 import React from 'react'
 import { Product } from '../types'
 
-import './ProductListItem.css'
-
 type Props = {
   product: Product
 }

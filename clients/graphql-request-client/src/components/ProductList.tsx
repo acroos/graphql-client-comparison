@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import { request, gql } from 'graphql-request'
+import { Link } from 'react-router-dom'
 
 import ProductListItem from './ProductListItem'
-import { Product, QueryResponse } from '../types'
-
-import './ProductList.css'
+import { Product, ProductsQueryResponse } from '../types'
 
 const QUERY = gql`
   query {
     fetchProducts {
+      id
       name
       price
       reviews {
@@ -21,12 +21,12 @@ const QUERY = gql`
 `
 
 export default function ProductList() {
-  const [products, setProducts] = useState<Product[]>()
+  const [products, setProducts] = useState<Product[] | undefined>()
   const [error, setError] = useState<string>()
 
   useEffect(() => {
     request('http://localhost:3000/graphql', QUERY)
-      .then((data: QueryResponse) => {
+      .then((data: ProductsQueryResponse) => {
         setProducts(data.fetchProducts)
       })
       .catch((reason) => {
@@ -34,17 +34,32 @@ export default function ProductList() {
       })
   }, [])
 
+  if (error) {
+    return <div>Error!</div>
+  }
+
+  if (products === undefined) {
+    return <div>Loading...</div>
+  }
+
   return (
     <div className="ProductList">
       <h1 className="ProductListHeader">Products</h1>
-      {products === undefined && error === undefined && <p>Loading...</p>}
-      {error && <p>Error!: {error}</p>}
-      <React.Fragment>
+      <div style={{ display: 'flex', flexWrap: 'wrap' }}>
         {products &&
-          products.map((product) => (
-            <ProductListItem key={product.name} product={product} />
-          ))}
-      </React.Fragment>
+          products.map((product) => {
+            const url = `/products/${product.id}`
+            return (
+              <Link
+                key={product.id}
+                to={url}
+                style={{ textDecoration: 'none', margin: 10 }}
+              >
+                <ProductListItem product={product} />
+              </Link>
+            )
+          })}
+      </div>
     </div>
   )
 }

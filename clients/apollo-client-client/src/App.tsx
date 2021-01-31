@@ -3,7 +3,6 @@ import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client'
 
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 
-import './App.css'
 import ProductDetail from './components/ProductDetail'
 import ProductList from './components/ProductList'
 

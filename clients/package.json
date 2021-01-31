@@ -6,7 +6,9 @@
   "scripts": {
     "graphql-request": "cd graphql-request-client && yarn start",
     "react-query": "cd react-query-client && yarn start",
-    "start": "concurrently \"yarn graphql-request\" \"yarn react-query\""
+    "apollo-client": "cd apollo-client-client && yarn start",
+    "urql": "cd urql-client && yarn start",
+    "start": "concurrently \"yarn graphql-request\" \"yarn react-query\" \"yarn apollo-client\" \"yarn urql\""
   },
   "devDependencies": {
     "concurrently": "^5.3.0"

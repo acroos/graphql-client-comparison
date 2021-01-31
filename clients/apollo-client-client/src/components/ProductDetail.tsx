@@ -3,8 +3,6 @@ import { RouteComponentProps, withRouter } from 'react-router'
 
 import useProduct from '../useProduct'
 
-import './ProductDetail.css'
-
 type ProductDetailParams = {
   id: string
 }
