@@ -4,11 +4,11 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "graphql-request": "cd graphql-request-client && yarn start",
-    "react-query": "cd react-query-client && yarn start",
-    "apollo-client": "cd apollo-client-client && yarn start",
-    "urql": "cd urql-client && yarn start",
-    "graphql-hooks": "cd graphql-hooks-client && yarn start",
+    "graphql-request": "cd graphql-request-client && yarn && yarn start",
+    "react-query": "cd react-query-client && yarn && yarn start",
+    "apollo-client": "cd apollo-client-client && yarn && yarn start",
+    "urql": "cd urql-client && yarn && yarn start",
+    "graphql-hooks": "cd graphql-hooks-client && yarn && yarn start",
     "start": "concurrently \"yarn graphql-request\" \"yarn react-query\" \"yarn apollo-client\" \"yarn urql\" \"graphql-hooks-client\""
   },
   "devDependencies": {
