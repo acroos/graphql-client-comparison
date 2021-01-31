@@ -4,9 +4,10 @@ import useProducts from '../useProducts'
 import ProductListItem from './ProductListItem'
 
 import { Link } from 'react-router-dom'
+import NewProduct from './NewProduct'
 
 export default function ProductList() {
-  const { data, error, loading } = useProducts()
+  const { data, error, loading, refetch } = useProducts()
 
   if (error) {
     return <div>Error!</div>
@@ -26,6 +27,7 @@ export default function ProductList() {
     <div className="ProductList">
       <h1 className="ProductListHeader">Products</h1>
       <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+        <NewProduct refetch={refetch} />
         {products &&
           products.map((product) => {
             const url = `/products/${product.id}`

@@ -25,3 +25,15 @@ export type ProductsQueryResponse = {
 export type ProductQueryResponse = {
   fetchProduct: ProductWithReviews
 }
+
+export type CreateProductVariables = {
+  name: string
+  price: number
+}
+
+export type CreateProductResponse = {
+  createProduct: {
+    product: Product
+    errors: string[]
+  }
+}
