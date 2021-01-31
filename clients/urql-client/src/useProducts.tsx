@@ -12,8 +12,7 @@ const QUERY = `
 `
 
 export default function useProducts() {
-  const [result, reexecuteQuery] = useQuery<ProductsQueryResponse, {}>({
+  return useQuery<ProductsQueryResponse, {}>({
     query: QUERY,
   })
-  return result
 }

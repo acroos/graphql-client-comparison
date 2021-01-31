@@ -9,7 +9,9 @@ type ProductDetailParams = {
 type ProductDetailProps = RouteComponentProps<ProductDetailParams>
 
 function ProductDetail({ match }: ProductDetailProps) {
-  const { data, fetching, error } = useProduct(+match.params.id)
+  const [{ data, fetching, error }, reexecuteQuery] = useProduct(
+    +match.params.id
+  )
 
   if (error) {
     return <div>Error!</div>

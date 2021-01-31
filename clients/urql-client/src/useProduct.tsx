@@ -21,12 +21,8 @@ type QueryVariables = {
 }
 
 export default function useProduct(productId: number) {
-  const [result, reexecuteQuery] = useQuery<
-    ProductQueryResponse,
-    QueryVariables
-  >({
+  return useQuery<ProductQueryResponse, QueryVariables>({
     query: QUERY,
     variables: { productId },
   })
-  return result
 }
