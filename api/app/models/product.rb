@@ -11,4 +11,6 @@
 class Product < ApplicationRecord
   has_many :reviews
   has_many :purchases
+
+  validates :price, numericality: { greater_than_or_equal_to: 0 }
 end
