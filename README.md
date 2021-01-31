@@ -172,8 +172,8 @@ If Apollo is too large of a library, but we don't want to sacrifice _too much_ c
 
 **cons**
 
+- mutation API is somewhat less intuitive
 - not quite as many options as apollo, if we want the ability to do _anything_
-- smaller community than apollo
 
 ### relay
 
