@@ -31,7 +31,7 @@
 
 ## Usage
 
-Included in this project are a GraphQL API and a number of clients to consume this API (implementing roughly the same implementation).
+Included in this project are a GraphQL API and a number of clients to consume this API (implementing roughly the same application).
 
 ### Running the API
 
